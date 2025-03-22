@@ -225,36 +225,36 @@ main {
 }
 
 .card1 {
-  background-image: url("images/partybg.png");
+  background-image: url("images/party.png");
   background-position: center;
   background-size: cover;
   background-repeat: none;
 }
 
 .card1:hover {
-  background-image: url("images/partybg-highlight.png");
+  background-image: url("images/party-highlight.png");
 }
 
 .card2 {
-  background-image: url("images/family.png");
+  background-image: url("images/family2.png");
   background-position: center;
   background-size: cover;
   background-repeat: none;
 }
 
 .card2:hover {
-  background-image: url("images/family-highlight.png");
+  background-image: url("images/family-highlight2.png");
 }
 
 .card3 {
-  background-image: url("images/kitchen.png");
+  background-image: url("images/kitchen3.png");
   background-position: center;
   background-size: cover;
   background-repeat: none;
 }
 
 .card3:hover {
-  background-image: url("images/kitchen-highlight.png");
+  background-image: url("images/kitchen-highlight3.png");
 }
 
 .card h1 {
@@ -273,7 +273,7 @@ main {
 }
 
 .card h4 {
-  color: gray;
+  color: rgb(184, 184, 184);
   font-size: 1rem;
   line-height: 1rem;
 }
