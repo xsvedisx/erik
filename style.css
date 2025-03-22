@@ -327,12 +327,13 @@ footer a:hover {
 }
 
 .profilepic {
-  background-image: url("images/erik.jpeg");
+  background-image: url("images/erik.png");
   background-size: cover;
   background-position: center;
   width: 150px;
   height: 150px;
   border-radius: 50%;
+  margin: 0 auto;
 }
 
 .contactIcons {
