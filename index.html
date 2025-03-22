@@ -1,0 +1,303 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Erik Svedsäter - Fotograf</title>
+    <link rel="stylesheet" href="style.css" />
+    <link rel="preconnect" href="https://fonts.googleapis.com" />
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+    <link
+      href="https://fonts.googleapis.com/css2?family=Nunito:ital,wght@0,200..1000;1,200..1000&display=swap"
+      rel="stylesheet"
+    />
+  </head>
+  <body>
+    <section class="hero">
+      <div class="navigation">
+        <div class="navigationContainer">
+          <div class="brand">ERIK SVEDSÄTER</div>
+          <!-- Hamburger Icon -->
+          <div class="hamburger-menu" id="hamburger">
+            <div></div>
+            <div></div>
+            <div></div>
+          </div>
+          <nav class="mobile-nav" id="mobileNav">
+            <ul>
+              <li>
+                <a href="#home">PORTFOLIO</a>
+              </li>
+              <li><a href="#price">PRISER</a></li>
+              <li><a href="#contact">KONTAKT</a></li>
+            </ul>
+          </nav>
+        </div>
+      </div>
+      <script>
+        document.addEventListener("DOMContentLoaded", function () {
+          const hamburger = document.getElementById("hamburger");
+          const mobileNav = document.getElementById("mobileNav");
+      
+          hamburger.addEventListener("click", function () {
+            this.classList.toggle("active");
+            mobileNav.classList.toggle("active");
+          });
+        });
+        
+        document.addEventListener("DOMContentLoaded", function () {
+        const navigationContainer = document.querySelector(".navigationContainer");
+
+        window.addEventListener("scroll", function () {
+          if (window.scrollY > 50) { // Adjust this value for how far you want to scroll before the background appears
+            navigationContainer.classList.add("scrolled");
+          } else {
+            navigationContainer.classList.remove("scrolled");
+          }
+        });
+      });
+      </script>
+      <div class="hero-welcome">
+        <h1>Berättelser i bilder</h1>
+        <p>Jag fångar känslor, ljus och ögonblick som varar för evigt</p>
+        <br />
+        <button href="#">BEGÄR OFFERT</button>
+      </div>
+      <div></div>
+    </section>
+
+    <div class="container">
+      <div
+        style="height: 1px; width: 100%; background-color: rgb(231, 231, 231)"
+      ></div>
+    </div>
+
+    <main>
+      <section class="portfolio" id="portfolio">
+        <div class="gallery-wrapper">
+          <div class="gallery">
+            <!-- Initial Images -->
+            <img src="images/1.jpeg" />
+            <img src="images/4.jpeg" />
+            <img src="images/2.jpeg" />
+            <img src="images/3.jpeg" />
+            <img src="images/5.jpeg" />
+            <img src="images/6.jpeg" />
+            <img src="images/8.jpg" />
+            <img src="images/9.jpg" />
+            <img src="images/7.jpeg" />
+          </div>
+          <div class="fade-overlay"></div>
+          <!-- Fade effect -->
+        </div>
+        <button id="load-more">Ladda fler</button>
+      </section>
+
+      <style>
+        .portfolio {
+          max-width: 100%;
+          padding: 20px;
+          margin: 0 auto;
+        }
+
+        .gallery-wrapper {
+          position: relative;
+          max-height: 700px; /* Initial height */
+          overflow: hidden;
+          transition: max-height 0.5s ease-in-out;
+        }
+
+        .fade-overlay {
+          position: absolute;
+          bottom: 0;
+          left: 0;
+          width: 100%;
+          height: 100px; /* Adjust for fade intensity */
+          background: linear-gradient(
+            to bottom,
+            rgba(255, 255, 255, 0) 0%,
+            rgba(255, 255, 255, 1) 100%
+          );
+          pointer-events: none;
+          transition: opacity 0.5s ease-in-out;
+        }
+
+        #load-more {
+          display: block;
+          margin: 20px auto;
+          padding: 10px 20px;
+          background-color: #000000;
+          color: white;
+          border: none;
+          cursor: pointer;
+          font-size: 16px;
+          border-radius: 5px;
+          transition: background 0.3s;
+        }
+      </style>
+
+      <script>
+        document
+          .getElementById("load-more")
+          .addEventListener("click", function () {
+            let newImages = [
+              "images/10.jpeg",
+              "images/11.jpg",
+              "images/12.jpg",
+              "images/13.jpeg",
+              "images/14.jpg",
+              "images/15.jpg",
+              "images/16.jpg",
+            ];
+
+            let gallery = document.querySelector(".gallery");
+            let wrapper = document.querySelector(".gallery-wrapper");
+            let fadeOverlay = document.querySelector(".fade-overlay");
+
+            // Check if all images are already loaded
+            if (gallery.children.length >= 18) {
+              this.style.display = "none"; // Hide button when all images are loaded
+              return;
+            }
+
+            // Add new images
+            newImages.forEach((src) => {
+              let img = document.createElement("img");
+              img.src = src;
+              gallery.appendChild(img);
+            });
+
+            // Expand wrapper height dynamically
+            wrapper.style.maxHeight = wrapper.scrollHeight + 500 + "px";
+
+            // Hide fade effect after loading
+            setTimeout(() => {
+              fadeOverlay.style.opacity = "0";
+            }, 500);
+          });
+      </script>
+
+      <section class="price" id="price">
+        <div class="card card1">
+          <div>
+            <h2>Heldagsevent</h2>
+            <div style="width: 100%; height: 1px"></div>
+            <div class="cardPrice">
+              <div><h1>1000:-</h1></div>
+              <div><h3>/timmen</h3></div>
+            </div>
+            <h4>Perfekt för ett bröllop, fest eller idrottsevenemang.</h4>
+          </div>
+          <div>
+            <p>
+              <img src="icons/check.png" height="15px" /> Högupplösta bilder,
+              färdigredigerade
+            </p>
+            <p>
+              <img src="icons/check.png" height="15px" /> Dokumentation av hela
+              eventet (mingel, tal, aktiviteter).
+            </p>
+            <p>
+              <img src="icons/check.png" height="15px" /> Anpassade bilder för
+              sociala medier och tryck.
+            </p>
+          </div>
+          <div>
+            <button class="button" href="#">BEGÄR OFFERT</button>
+          </div>
+        </div>
+
+        <div class="card card2">
+          <div>
+            <h2>Porträtt - Familj/Solo</h2>
+            <div style="width: 100%; height: 1px"></div>
+            <div class="cardPrice">
+              <div><h1>800:-</h1></div>
+            </div>
+            <h4>
+              Jag fångar naturliga och vackra/proffessionella porträtt av dig
+              och/eller din familj.
+            </h4>
+          </div>
+          <div>
+            <p>
+              <img src="icons/check.png" height="15px" /> Fotografering på
+              valfri plats.
+            </p>
+            <p>
+              <img src="icons/check.png" height="15px" /> 5-10 högupplösta,
+              redigerade bilder.
+            </p>
+            <p>
+              <img src="icons/check.png" height="15px" /> Naturlig och
+              avslappnad guidning under sessionen.
+            </p>
+            <p>
+              <img src="icons/check.png" height="15px" /> Möjlighet att köpa
+              till fler bilder.
+            </p>
+          </div>
+          <div>
+            <button class="button" href="#">BEGÄR OFFERT</button>
+          </div>
+        </div>
+
+        <div class="card card3">
+          <div>
+            <h2>Fastighetsfotografering</h2>
+            <div style="width: 100%; height: 1px"></div>
+            <div class="cardPrice">
+              <div><h1>2000:-</h1></div>
+            </div>
+            <h4>
+              Jag tar professionella bilder som framhäver både interiör och
+              exteriör, och gör ditt hem eller objekt attraktivt för potentiella
+              köpare eller hyresgäster.
+            </h4>
+          </div>
+          <div>
+            <p>
+              <img src="icons/check.png" height="15px" /> Professionella bilder
+              för bostadsannonsering.
+            </p>
+            <p>
+              <img src="icons/check.png" height="15px" /> Högupplösta och
+              webboptimerade bilder.
+            </p>
+            <p>
+              <img src="icons/check.png" height="15px" /> Möjlighet till
+              drönarfotografering (tillägg).
+            </p>
+          </div>
+          <div>
+            <button class="button" href="#">BEGÄR OFFERT</button>
+          </div>
+        </div>
+      </section>
+
+      <footer id="contact">
+        <img class="profilepic">
+        <h1>Kontakta mig</h1>
+        <div class="contactIcons">
+          <div style="width:150px;">
+            <img class="ig" src="icons/telephone.png" />
+            <br>
+            <h3>070 xxx xxxx</h3>
+          </div>
+          <div style="width:150px;">
+            <img class="ig" src="icons/email.png" />
+            <br>
+            <h3>erik@hotmail.com</h3>
+          </div>
+          <div style="width:150px;">
+          <img class="ig" src="icons/ig.png" style="filter:grayscale(100%);"/>
+          <br>
+          <h3>erkan</h3>
+          </div>
+          
+        </div>
+        <p>Sidan skapad av: <a href="#">henriksvedsater.se</a></p>
+      </section>
+    </main>
+  </body>
+</html>

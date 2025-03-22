@@ -1,0 +1,530 @@
+/* Basic CSS Reset */
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+  font-family: "Nunito", sans-serif;
+  scroll-behavior: smooth;
+}
+
+/* Body Styling */
+body {
+  font-family: "Nunito", sans-serif;
+  line-height: 1.6;
+  background-color: #fff;
+  color: #333;
+}
+
+/* Container */
+.container {
+  max-width: 1200px;
+  margin: 0 auto;
+}
+
+/* Header */
+header {
+  background: #333;
+  color: #fff;
+  padding: 10px 0;
+  text-align: center;
+}
+
+header h1 {
+  margin: 0;
+}
+
+.hero {
+  width: 100%;
+  margin: 0 auto;
+  height: 100vh;
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
+  align-items: space-between;
+  background-color: #333;
+  padding: 10px;
+  background-image: url("images/BG.jpg");
+  background-position: center;
+  background-size: cover;
+}
+
+button {
+  padding: 10px 20px;
+  background-color: white;
+  border: 0px;
+  border-radius: 10px;
+  font-size: 1.1rem;
+  transition: transform 0.1s ease-out;
+  cursor: pointer;
+  box-shadow: 0px 4px 6px rgba(0, 0, 0, 0.1);
+}
+
+button:hover {
+  transform: translateY(-3px);
+}
+
+.hero h1 {
+  font-size: 5rem;
+  color: white;
+}
+
+.hero h3 {
+  font-size: 4rem;
+  color: white;
+}
+
+.hero p {
+  color: white;
+  font-size: 1.4rem;
+}
+
+.hero-welcome {
+  text-align: center;
+}
+
+.portfolio {
+  max-width: 100%;
+  padding: 20px;
+  margin: 0 auto;
+}
+
+.gallery {
+  column-count: 5;
+  column-gap: 20px;
+}
+
+.gallery img {
+  width: 100%;
+  break-inside: avoid;
+  margin-bottom: 10px;
+  cursor: pointer;
+  transition: filter 0.3s ease-in-out, transform 0.3s ease-in-out;
+}
+
+.gallery img:hover {
+  filter: grayscale(50%);
+  transform: scale(1.05);
+}
+
+/* Initial State: No background */
+.navigationContainer {
+  display: flex;
+  position: fixed; /* Fix it to the top of the screen */
+  top: 0; /* Align it to the top */
+  left: 0;
+  right: 0;
+  justify-content: space-between; /* Spread brand and nav apart */
+  align-items: center; /* Center vertically */
+  width: 100%; /* Ensure it spans the full width of the viewport */
+  padding: 10px 20px 5px 20px;
+  z-index: 1001; /* Ensure it stays on top */
+  background-color: transparent; /* No background initially */
+  transition: background-color 0.3s ease; /* Smooth transition for background */
+}
+
+/* When scrolled down, background color will be applied */
+.navigationContainer.scrolled {
+  background-color: rgb(17, 17, 17); /* Background color when scrolled */
+}
+
+/* Navigation */
+nav {
+  display: flex;
+  align-items: center;
+  padding-top: 6px;
+}
+
+nav a {
+  color: #ffffff;
+  text-decoration: none;
+  border-radius: 5px;
+  position: relative;
+  display: inline-block;
+  padding-bottom: 4px;
+}
+
+nav a::after {
+  content: "";
+  position: absolute;
+  width: 0;
+  height: 3px;
+  display: block;
+  margin: auto;
+  left: 0;
+  right: 0;
+  bottom: 0;
+  background: #ffffff;
+  transition: width 0.3s ease-in-out;
+}
+
+nav a:hover::after {
+  width: 100%;
+}
+
+.brand {
+  display: flex;
+  font-size: 1.2rem;
+  color: white;
+}
+
+ul {
+  display: flex;
+  flex-direction: row;
+  list-style-type: none;
+  gap: 30px;
+  padding: 0;
+  margin: 0;
+}
+
+li {
+  list-style-type: none;
+}
+
+/* Main Content */
+main {
+  background: #fff;
+}
+
+.about {
+  max-width: 1200px;
+  margin: 0 auto;
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
+  text-align: start;
+  gap: 20px;
+  padding: 20px;
+}
+
+.about-image-section {
+  width: 300px;
+  height: 300px;
+  background-image: url("images/erik.png");
+  background-position: center;
+  background-size: cover;
+}
+
+.about-section {
+  color: black;
+}
+
+.price {
+  max-width: 1400px;
+  margin: 0 auto;
+  display: flex;
+  flex-direction: row;
+  justify-content: space-evenly;
+  align-items: top;
+  gap: 20px;
+}
+
+.card {
+  height: 500px;
+  width: 500px;
+  border-radius: 10px;
+  background-color: rgb(17, 17, 17);
+  border: 1px solid #e4e4e4;
+  box-shadow: 0px 4px 6px rgba(0, 0, 0, 0.1);
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
+  padding: 40px;
+  transition: 0.5s ease-in-out;
+}
+
+.card1 {
+  background-image: url("images/partybg.png");
+  background-position: center;
+  background-size: cover;
+  background-repeat: none;
+}
+
+.card1:hover {
+  background-image: url("images/partybg-highlight.png");
+}
+
+.card2 {
+  background-image: url("images/family.png");
+  background-position: center;
+  background-size: cover;
+  background-repeat: none;
+}
+
+.card2:hover {
+  background-image: url("images/family-highlight.png");
+}
+
+.card3 {
+  background-image: url("images/kitchen.png");
+  background-position: center;
+  background-size: cover;
+  background-repeat: none;
+}
+
+.card3:hover {
+  background-image: url("images/kitchen-highlight.png");
+}
+
+.card h1 {
+  color: white;
+  font-size: 3rem;
+  line-height: 2.5rem;
+}
+
+.card h2 {
+  color: white;
+}
+
+.card h3 {
+  color: rgb(226, 226, 226);
+  font-size: 1.2rem;
+}
+
+.card h4 {
+  color: gray;
+  font-size: 1rem;
+  line-height: 1rem;
+}
+
+.card p {
+  font-size: 1.1rem;
+  color: white;
+  padding: 2px;
+}
+
+.cardPrice {
+  display: flex;
+  flex-direction: row;
+  justify-content: start;
+  align-items: flex-end;
+  margin-bottom: 10px;
+}
+
+/* Footer */
+footer {
+  background-image: url("images/contactbg-2.png");
+  background-position: center;
+  background-size: cover;
+  background-repeat: none;
+  color: #fff;
+  text-align: center;
+  padding-top: 50px;
+  margin-top: 40px;
+}
+
+footer p {
+  margin: 0;
+}
+
+footer h1 {
+  font-size: 2.5rem;
+}
+
+footer p {
+  color: gray;
+  font-size: 0.8rem;
+}
+
+footer a {
+  color: white;
+  text-decoration: none;
+}
+
+footer a:hover {
+  color: gray;
+}
+
+.profilepic {
+  background-image: url("images/erik.png");
+  background-size: cover;
+  background-position: center;
+  width: 150px;
+  height: 150px;
+  border-radius: 50%;
+}
+
+.contactIcons {
+  max-width: 1200px;
+  margin: 0 auto;
+  display: flex;
+  flex-direction: row;
+  justify-content: space-evenly;
+  align-items: center;
+  padding: 20px;
+  padding-bottom: 30px;
+}
+
+h2 {
+  font-size: 1.6rem;
+  font-weight: 500;
+}
+
+h3 {
+  font-size: 1.3rem;
+  font-weight: normal;
+}
+
+.ig {
+  height: 80px;
+}
+
+/* Responsive Design */
+@media (max-width: 1200px) {
+  .gallery {
+    column-count: 4;
+  }
+  .price {
+    flex-direction: column;
+    margin: 10px;
+  }
+  .card {
+    width: 100%;
+  }
+}
+
+@media (max-width: 992px) {
+  .gallery {
+    column-count: 3;
+  }
+  .card {
+    width: 100%;
+    height: 500px;
+  }
+}
+
+@media (max-width: 768px) {
+  .gallery {
+    column-count: 2;
+  }
+  .hero h1 {
+    font-size: 3rem;
+  }
+  .hero h3 {
+    font-size: 2rem;
+  }
+  .hero p {
+    font-size: 1rem;
+  }
+  .card {
+    height: 400px;
+  }
+  .price {
+    flex-direction: column;
+    align-items: center;
+  }
+}
+
+@media (max-width: 576px) {
+  .gallery {
+    column-count: 1;
+  }
+  .hero h1 {
+    font-size: 2rem;
+  }
+  .hero h3 {
+    font-size: 1.5rem;
+  }
+  .hero p {
+    font-size: 0.8rem;
+  }
+  .navigationContainer {
+    flex-direction: row;
+    align-items: center;
+  }
+  nav {
+    display: none; /* Hide default nav */
+  }
+  .ul {
+    flex-direction: column;
+  }
+
+  .hamburger-menu {
+    display: block;
+    cursor: pointer;
+    width: 30px;
+    height: 35px;
+    position: relative;
+    z-index: 1001;
+  }
+
+  /* Hamburger Icon */
+  .hamburger-menu div {
+    width: 30px;
+    height: 4px;
+    background-color: white;
+    margin: 5px 0px;
+    transition: 0.4s;
+  }
+
+  /* Navigation Menu (Hidden Initially) */
+  .mobile-nav {
+    display: none;
+    position: absolute;
+    top: -100%;
+    left: 0;
+    width: 100%;
+    background-color: rgb(17, 17, 17);
+    color: #ffffff;
+    text-align: center;
+    padding: 20px 20px;
+    transition: top 1s ease-in-out;
+  }
+
+  .mobile-nav ul {
+    list-style: none;
+    padding: 10px;
+    flex-direction: column;
+  }
+
+  .mobile-nav ul li {
+    padding: 15px;
+  }
+
+  .mobile-nav ul li a {
+    color: white;
+    text-decoration: none;
+    font-size: 1.2rem;
+    font-weight: 600;
+  }
+
+  /* Slide Down Animation */
+  .mobile-nav.active {
+    display: block;
+    top: 0;
+  }
+
+  /* Transform Hamburger to X */
+  .hamburger-menu.active div:nth-child(1) {
+    transform: translateY(9px) rotate(45deg);
+    background-color: #ffffff;
+  }
+
+  .hamburger-menu.active div:nth-child(2) {
+    opacity: 0;
+  }
+
+  .hamburger-menu.active div:nth-child(3) {
+    transform: translateY(-9px) rotate(-45deg);
+    background-color: #ffffff;
+  }
+  .card {
+    height: 500px;
+  }
+  .card h2 {
+    font-size: 1.3rem;
+  }
+  .contactIcons {
+    padding: 10px;
+    padding-bottom: 30px;
+  }
+  .contactIcons h3 {
+    font-size: 0.8rem;
+  }
+  .ig {
+    height: 50px;
+  }
+  footer {
+    margin-top: 20px;
+    padding-top: 20px;
+  }
+}
