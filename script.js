@@ -34,3 +34,26 @@ document.getElementById("load-more").addEventListener("click", function () {
     fadeOverlay.style.opacity = "0";
   }, 500);
 });
+
+document.addEventListener("DOMContentLoaded", function () {
+  const hamburger = document.getElementById("hamburger");
+  const mobileNav = document.getElementById("mobileNav");
+
+  hamburger.addEventListener("click", function () {
+    this.classList.toggle("active");
+    mobileNav.classList.toggle("active");
+  });
+});
+
+document.addEventListener("DOMContentLoaded", function () {
+  const navigationContainer = document.querySelector(".navigationContainer");
+
+  window.addEventListener("scroll", function () {
+    if (window.scrollY > 50) {
+      // Adjust this value for how far you want to scroll before the background appears
+      navigationContainer.classList.add("scrolled");
+    } else {
+      navigationContainer.classList.remove("scrolled");
+    }
+  });
+});
