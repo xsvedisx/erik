@@ -196,14 +196,6 @@ main {
   padding: 20px;
 }
 
-.about-image-section {
-  width: 300px;
-  height: 300px;
-  background-image: url("images/Erik.png");
-  background-position: center;
-  background-size: cover;
-}
-
 .about-section {
   color: black;
 }
@@ -335,7 +327,7 @@ footer a:hover {
 }
 
 .profilepic {
-  background-image: url("images/erik.png");
+  background-image: url("images/erik.jpeg");
   background-size: cover;
   background-position: center;
   width: 150px;
