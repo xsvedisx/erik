@@ -116,7 +116,7 @@ button:hover {
   justify-content: space-between; /* Spread brand and nav apart */
   align-items: center; /* Center vertically */
   width: 100%; /* Ensure it spans the full width of the viewport */
-  padding: 10px 20px 5px 20px;
+  padding: 6px 20px 5px 20px;
   z-index: 1001; /* Ensure it stays on top */
   background-color: transparent; /* No background initially */
   transition: background-color 0.3s ease; /* Smooth transition for background */
